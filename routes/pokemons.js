@@ -18,8 +18,9 @@ router.get("/", async function (req, res, next) {
       types: [item.type1, item.type2]
         .filter(Boolean)
         .map((t) => t.toLowerCase()),
-      url: `http://localhost:3000/images/${index + 1}.png`,
+      url: `https://pokemon-be-tkcu.onrender.com/images/${index + 1}.png`,
     }));
+    console.log(transformedData[0].url);
     //Lấy query params
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 20;
